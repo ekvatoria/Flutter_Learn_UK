@@ -2,10 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_full_learn/101/app_bar.dart';
 import 'package:flutter_full_learn/101/button_learn.dart';
+import 'package:flutter_full_learn/101/card_learn.dart';
 import 'package:flutter_full_learn/101/color_learn.dart';
 import 'package:flutter_full_learn/101/container_sized_box_learn.dart';
 import 'package:flutter_full_learn/101/icon_learn.dart';
+import 'package:flutter_full_learn/101/image_learn.dart';
+import 'package:flutter_full_learn/101/padding_learn.dart';
 import 'package:flutter_full_learn/101/scaffold_learn.dart';
+import 'package:flutter_full_learn/101/stateless_learn.dart';
 import 'package:flutter_full_learn/101/text_learn.dart';
 
 void main() {
@@ -21,6 +25,8 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark().copyWith(
+          // Card için proje geneli ön tanım, tüm projede geçerli olur.
+          //cardTheme: CardTheme(shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20))),
           appBarTheme: const AppBarTheme(
             centerTitle: true,
             systemOverlayStyle: SystemUiOverlayStyle.light,
@@ -28,8 +34,8 @@ class MyApp extends StatelessWidget {
             elevation: 0,
           ),
           colorScheme: const ColorScheme(
-              onPrimary: Colors.amber,
-              primary: Colors.amber,
+              onPrimary: Colors.blue,
+              primary: Colors.blue,
               secondary: Colors.amber,
               onSecondary: Colors.amber,
               onError: Colors.amber,
@@ -37,9 +43,9 @@ class MyApp extends StatelessWidget {
               onBackground: Colors.amber,
               surface: Colors.amber,
               onSurface: Colors.amber,
-              error: Colors.amber,
+              error: Colors.red,
               brightness: Brightness.dark)),
-      home: const ColorLearnView(),
+      home: const ImageLearn(),
     );
   }
 }

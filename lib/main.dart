@@ -12,9 +12,13 @@ import 'package:flutter_full_learn/101/image_learn.dart';
 import 'package:flutter_full_learn/101/indicator_learn.dart';
 import 'package:flutter_full_learn/101/list_tile_learn.dart';
 import 'package:flutter_full_learn/101/padding_learn.dart';
+import 'package:flutter_full_learn/101/page_view_learn.dart';
 import 'package:flutter_full_learn/101/scaffold_learn.dart';
 import 'package:flutter_full_learn/101/stack_learn.dart';
+import 'package:flutter_full_learn/101/stateful_learn.dart';
+import 'package:flutter_full_learn/101/stateful_life_cycle.dart';
 import 'package:flutter_full_learn/101/stateless_learn.dart';
+import 'package:flutter_full_learn/101/text_field_learn.dart';
 import 'package:flutter_full_learn/101/text_learn.dart';
 import 'package:flutter_full_learn/demos/note_demos_view.dart';
 import 'package:flutter_full_learn/demos/stack_demo_view.dart';
@@ -33,11 +37,20 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark().copyWith(
         listTileTheme: const ListTileThemeData(contentPadding: EdgeInsets.zero),
-        progressIndicatorTheme:
-            const ProgressIndicatorThemeData(color: Colors.white),
+        progressIndicatorTheme: const ProgressIndicatorThemeData(color: Colors.white),
+        inputDecorationTheme: const InputDecorationTheme(
+            filled: true,
+            fillColor: Colors.white,
+            iconColor: Colors.red,
+            border: OutlineInputBorder(),
+            floatingLabelStyle: TextStyle(color: Colors.red, fontSize: 24, fontWeight: FontWeight.w600)),
 
         // Card için proje geneli ön tanım, tüm projede geçerli olur.
-        //cardTheme: CardTheme(shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20))),
+
+        textTheme: const TextTheme(
+            titleMedium: TextStyle(
+                color: Colors
+                    .red)), //cardTheme: CardTheme(shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20))),
         appBarTheme: const AppBarTheme(
           centerTitle: true,
           systemOverlayStyle: SystemUiOverlayStyle.light,
@@ -57,7 +70,7 @@ class MyApp extends StatelessWidget {
         //     error: Colors.red,
         //     brightness: Brightness.dark)
       ),
-      home: const StackDemoView(),
+      home: const TextFieldLearn(),
     );
   }
 }

@@ -11,6 +11,9 @@ import 'package:flutter_full_learn/101/icon_learn.dart';
 import 'package:flutter_full_learn/101/image_learn.dart';
 import 'package:flutter_full_learn/101/indicator_learn.dart';
 import 'package:flutter_full_learn/101/list_tile_learn.dart';
+import 'package:flutter_full_learn/101/list_view_builder.dart';
+import 'package:flutter_full_learn/101/list_view_learn.dart';
+import 'package:flutter_full_learn/101/navigation_learn.dart';
 import 'package:flutter_full_learn/101/padding_learn.dart';
 import 'package:flutter_full_learn/101/page_view_learn.dart';
 import 'package:flutter_full_learn/101/scaffold_learn.dart';
@@ -20,6 +23,9 @@ import 'package:flutter_full_learn/101/stateful_life_cycle.dart';
 import 'package:flutter_full_learn/101/stateless_learn.dart';
 import 'package:flutter_full_learn/101/text_field_learn.dart';
 import 'package:flutter_full_learn/101/text_learn.dart';
+import 'package:flutter_full_learn/demos/color_demos_view.dart';
+import 'package:flutter_full_learn/demos/color_life_cycle_view.dart';
+import 'package:flutter_full_learn/demos/my_collections_demo.dart';
 import 'package:flutter_full_learn/demos/note_demos_view.dart';
 import 'package:flutter_full_learn/demos/stack_demo_view.dart';
 
@@ -70,7 +76,7 @@ class MyApp extends StatelessWidget {
         //     error: Colors.red,
         //     brightness: Brightness.dark)
       ),
-      home: const TextFieldLearn(),
+      home: const NavigationLearn(),
     );
   }
 }

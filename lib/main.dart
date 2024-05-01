@@ -23,7 +23,11 @@ import 'package:flutter_full_learn/101/stateful_life_cycle.dart';
 import 'package:flutter_full_learn/101/stateless_learn.dart';
 import 'package:flutter_full_learn/101/text_field_learn.dart';
 import 'package:flutter_full_learn/101/text_learn.dart';
+import 'package:flutter_full_learn/202/animated_learn_view.dart';
+import 'package:flutter_full_learn/202/form_learn_view.dart';
+import 'package:flutter_full_learn/202/image_learn_202.dart';
 import 'package:flutter_full_learn/202/model_learn_view.dart';
+import 'package:flutter_full_learn/202/oop_learn_view.dart';
 import 'package:flutter_full_learn/202/package_learn_view.dart';
 import 'package:flutter_full_learn/202/service/comments_learn_view.dart';
 import 'package:flutter_full_learn/202/service/service_learn_get_view.dart';
@@ -90,7 +94,7 @@ class MyApp extends StatelessWidget {
       //   //     error: Colors.red,
       //   //     brightness: Brightness.dark)
       // ),
-      home: const ThemeLearnView(),
+      home: const FormLearnView(),
     );
   }
 }

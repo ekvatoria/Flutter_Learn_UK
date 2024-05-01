@@ -24,10 +24,13 @@ import 'package:flutter_full_learn/101/stateless_learn.dart';
 import 'package:flutter_full_learn/101/text_field_learn.dart';
 import 'package:flutter_full_learn/101/text_learn.dart';
 import 'package:flutter_full_learn/202/model_learn_view.dart';
+import 'package:flutter_full_learn/202/package_learn_view.dart';
 import 'package:flutter_full_learn/202/service/comments_learn_view.dart';
 import 'package:flutter_full_learn/202/service/service_learn_get_view.dart';
 import 'package:flutter_full_learn/202/service/service_post_learn_view.dart';
 import 'package:flutter_full_learn/202/tab_learn.dart';
+import 'package:flutter_full_learn/202/theme/light_theme.dart';
+import 'package:flutter_full_learn/202/theme_learn_view.dart';
 import 'package:flutter_full_learn/demos/color_demos_view.dart';
 import 'package:flutter_full_learn/demos/color_life_cycle_view.dart';
 import 'package:flutter_full_learn/demos/my_collections_demo.dart';
@@ -46,46 +49,48 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData.dark().copyWith(
-        tabBarTheme: const TabBarTheme(
-            labelColor: Colors.white, unselectedLabelColor: Colors.red, indicatorSize: TabBarIndicatorSize.label),
-        bottomAppBarTheme: const BottomAppBarTheme(shape: CircularNotchedRectangle()),
+      theme: LightTheme().theme,
 
-        listTileTheme: const ListTileThemeData(contentPadding: EdgeInsets.zero),
-        progressIndicatorTheme: const ProgressIndicatorThemeData(color: Colors.white),
-        inputDecorationTheme: const InputDecorationTheme(
-            filled: true,
-            fillColor: Colors.white,
-            iconColor: Colors.red,
-            border: OutlineInputBorder(),
-            floatingLabelStyle: TextStyle(color: Colors.red, fontSize: 24, fontWeight: FontWeight.w600)),
+      // ThemeData.dark().copyWith(
+      //   tabBarTheme: const TabBarTheme(
+      //       labelColor: Colors.white, unselectedLabelColor: Colors.red, indicatorSize: TabBarIndicatorSize.label),
+      //   bottomAppBarTheme: const BottomAppBarTheme(shape: CircularNotchedRectangle()),
 
-        // Card için proje geneli ön tanım, tüm projede geçerli olur.
+      //   listTileTheme: const ListTileThemeData(contentPadding: EdgeInsets.zero),
+      //   progressIndicatorTheme: const ProgressIndicatorThemeData(color: Colors.white),
+      //   inputDecorationTheme: const InputDecorationTheme(
+      //       filled: true,
+      //       fillColor: Colors.white,
+      //       iconColor: Colors.red,
+      //       border: OutlineInputBorder(),
+      //       floatingLabelStyle: TextStyle(color: Colors.red, fontSize: 24, fontWeight: FontWeight.w600)),
 
-        textTheme: const TextTheme(
-            titleMedium: TextStyle(
-                color: Colors
-                    .red)), //cardTheme: CardTheme(shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20))),
-        appBarTheme: const AppBarTheme(
-          centerTitle: true,
-          systemOverlayStyle: SystemUiOverlayStyle.light,
-          backgroundColor: Colors.transparent,
-          elevation: 0,
-        ),
-        // colorScheme: const ColorScheme(
-        //     onPrimary: Colors.blue,
-        //     primary: Colors.blue,
-        //     secondary: Colors.amber,
-        //     onSecondary: Colors.amber,
-        //     onError: Colors.amber,
-        //     background: Colors.amber,
-        //     onBackground: Colors.amber,
-        //     surface: Colors.amber,
-        //     onSurface: Colors.amber,
-        //     error: Colors.red,
-        //     brightness: Brightness.dark)
-      ),
-      home: const ServiceLearn(),
+      //   // Card için proje geneli ön tanım, tüm projede geçerli olur.
+
+      //   textTheme: const TextTheme(
+      //       titleMedium: TextStyle(
+      //           color: Colors
+      //               .red)), //cardTheme: CardTheme(shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20))),
+      //   appBarTheme: const AppBarTheme(
+      //     centerTitle: true,
+      //     systemOverlayStyle: SystemUiOverlayStyle.light,
+      //     backgroundColor: Colors.transparent,
+      //     elevation: 0,
+      //   ),
+      //   // colorScheme: const ColorScheme(
+      //   //     onPrimary: Colors.blue,
+      //   //     primary: Colors.blue,
+      //   //     secondary: Colors.amber,
+      //   //     onSecondary: Colors.amber,
+      //   //     onError: Colors.amber,
+      //   //     background: Colors.amber,
+      //   //     onBackground: Colors.amber,
+      //   //     surface: Colors.amber,
+      //   //     onSurface: Colors.amber,
+      //   //     error: Colors.red,
+      //   //     brightness: Brightness.dark)
+      // ),
+      home: const ThemeLearnView(),
     );
   }
 }

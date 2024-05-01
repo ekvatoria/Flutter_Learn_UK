@@ -1,5 +1,5 @@
 // bu variable lar null gelebilir örneği
-class PostModel {
+class PostModel1 {
   int? userId;
   int? id;
   String? title;

@@ -57,5 +57,3 @@ class FormFieldValidator {
 class ValidatorMessage {
   static const String _notEmpty = 'Bu alan boş geçilemez';
 }
-
-//TODO:V13T0

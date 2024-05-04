@@ -24,6 +24,9 @@ import 'package:flutter_full_learn/101/stateless_learn.dart';
 import 'package:flutter_full_learn/101/text_field_learn.dart';
 import 'package:flutter_full_learn/101/text_learn.dart';
 import 'package:flutter_full_learn/202/animated_learn_view.dart';
+import 'package:flutter_full_learn/202/cache/secure_context/secure_context_learn.dart';
+import 'package:flutter_full_learn/202/cache/shared_learn_cache.dart';
+import 'package:flutter_full_learn/202/cache/shared_list_cache.dart';
 import 'package:flutter_full_learn/202/form_learn_view.dart';
 import 'package:flutter_full_learn/202/image_learn_202.dart';
 import 'package:flutter_full_learn/202/model_learn_view.dart';
@@ -94,7 +97,7 @@ class MyApp extends StatelessWidget {
       //   //     error: Colors.red,
       //   //     brightness: Brightness.dark)
       // ),
-      home: const FormLearnView(),
+      home: const SharedContextLearn(),
     );
   }
 }

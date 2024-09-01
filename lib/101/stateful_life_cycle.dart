@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_full_learn/product/language/language_items.dart';
 
 class StatefulLifeCycleLearn extends StatefulWidget {
   const StatefulLifeCycleLearn({super.key, required this.message});

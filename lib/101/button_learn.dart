@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class ButtonLearnView extends StatelessWidget {
@@ -11,16 +10,14 @@ class ButtonLearnView extends StatelessWidget {
       body: Column(children: [
         TextButton(
           onPressed: () {},
-          style: ButtonStyle(
-              backgroundColor: MaterialStateProperty.resolveWith((states) {
+          style: ButtonStyle(backgroundColor: MaterialStateProperty.resolveWith((states) {
             if (states.contains(MaterialState.pressed)) {
               return Colors.green;
             } else {
               return Colors.black;
             }
           })),
-          child:
-              Text("TextButton", style: Theme.of(context).textTheme.bodySmall),
+          child: Text("TextButton", style: Theme.of(context).textTheme.bodySmall),
         ),
         const ElevatedButton(onPressed: null, child: Text("ElevatedButton")),
         IconButton(onPressed: () {}, icon: const Icon(Icons.abc)),
@@ -38,10 +35,7 @@ class ButtonLearnView extends StatelessWidget {
               padding: const EdgeInsets.all(10)),
           child: const SizedBox(width: 200, child: Text("Outlined")),
         ),
-        OutlinedButton.icon(
-            onPressed: () {},
-            icon: const Icon(Icons.abc),
-            label: const Text("OutlinedIcon")),
+        OutlinedButton.icon(onPressed: () {}, icon: const Icon(Icons.abc), label: const Text("OutlinedIcon")),
         //DrawerButton(onPressed: () {}),
         //FilledButton(onPressed: () {}, child: const Text("data")),
         //SubmenuButton(menuChildren: [], child: Text("Submenu")),
@@ -59,12 +53,10 @@ class ButtonLearnView extends StatelessWidget {
         ElevatedButton(
             style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.black,
-                shape: const RoundedRectangleBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(20)))),
+                shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(20)))),
             onPressed: () {},
             child: Padding(
-              padding: const EdgeInsets.only(
-                  bottom: 20, top: 20, left: 40, right: 40),
+              padding: const EdgeInsets.only(bottom: 20, top: 20, left: 40, right: 40),
               child: Text(
                 "Place Bid",
                 style: Theme.of(context).textTheme.headlineMedium,

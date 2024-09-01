@@ -48,7 +48,7 @@ class _ServiceLearnState extends State<ServiceLearn> {
     //6.3-Fonsksiyon datalar gelmeden önce çağırılır. Future fetch post ta
     _changeLoading();
     //Future demek bu kodu bekle ve bu koddan sonra alt satıra geçme demek.
-    final response = await Dio().get('http://jsonplaceholder.typicode.com/posts');
+    final response = await Dio().get('http://jsonplaceholder.typicode.com/');
 
     //5-Kesinlikle yapılması gereken if koşulu ile ve == ile response durumuna bakılmalıdır.
     if (response.statusCode == HttpStatus.ok) {

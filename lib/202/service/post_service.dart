@@ -14,7 +14,7 @@ abstract class IPostService {
 
 class PostService implements IPostService {
   final Dio _dio;
-  PostService() : _dio = Dio(BaseOptions(baseUrl: 'https://jsonplaceholder.typicode.com/'));
+  PostService() : _dio = Dio(BaseOptions(baseUrl: 'https://jsonplaceholder.typicode.com/posts'));
 
   @override
   Future<bool> addItemToService(PostModel postModel) async {

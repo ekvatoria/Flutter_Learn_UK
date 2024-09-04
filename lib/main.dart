@@ -42,15 +42,26 @@ import 'package:flutter_full_learn/202/theme/light_theme.dart';
 import 'package:flutter_full_learn/202/theme_learn_view.dart';
 import 'package:flutter_full_learn/303/call_back_learn.dart';
 import 'package:flutter_full_learn/303/part/part_of_learn.dart';
+import 'package:flutter_full_learn/303/reqres_resource/view/reqres_view.dart';
 import 'package:flutter_full_learn/303/tabbar_advance.dart';
 import 'package:flutter_full_learn/demos/color_demos_view.dart';
 import 'package:flutter_full_learn/demos/color_life_cycle_view.dart';
 import 'package:flutter_full_learn/demos/my_collections_demo.dart';
 import 'package:flutter_full_learn/demos/note_demos_view.dart';
 import 'package:flutter_full_learn/demos/stack_demo_view.dart';
+import 'package:flutter_full_learn/product/global/rescource_context.dart';
+import 'package:flutter_full_learn/product/global/theme_notifier.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  // runApp(const MyApp());
+  runApp(MultiProvider(
+    providers: [
+      Provider(create: (_) => ResourceContext()),
+      ChangeNotifierProvider<ThemeNotifier>(create: (context) => ThemeNotifier())
+    ],
+    builder: (context, child) => const MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {
@@ -61,7 +72,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
-      theme: LightTheme().theme,
+      theme: context.watch<ThemeNotifier>().currentTheme,
 
       // ThemeData.dark().copyWith(
       //   tabBarTheme: const TabBarTheme(
@@ -102,7 +113,7 @@ class MyApp extends StatelessWidget {
       //   //     error: Colors.red,
       //   //     brightness: Brightness.dark)
       // ),
-      home: const TabAdvancelearn(),
+      home: const ReqResView(),
     );
   }
 }

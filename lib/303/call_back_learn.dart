@@ -60,5 +60,3 @@ class CallBackUser {
     ];
   }
 }
-
-//TODO: V15T2500

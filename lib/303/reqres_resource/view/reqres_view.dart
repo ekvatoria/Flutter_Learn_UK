@@ -35,6 +35,7 @@ class _ReqResViewState extends State<ReqResView> with ProjectDioMixin {
             onPressed: () {
               context.read<ThemeNotifier>().changeTheme();
             },
+            child: const Icon(Icons.add),
           ),
           appBar: AppBar(
               actions: const [_SaveAndNavigate()],
@@ -74,14 +75,46 @@ class _SaveAndNavigate extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return IconButton(
-        onPressed: () {
-          context.read<ReqResProvider>().saveToLocale(context.read<ResourceContext>());
-          Navigator.of(context).push(MaterialPageRoute(builder: (_) {
-            return const ImageLearn202();
-          }));
-        },
-        icon: const Icon(Icons.ac_unit));
+    return Container(
+      padding: const EdgeInsets.only(right: 40),
+      child: Row(
+        children: [
+          IconButton(
+              onPressed: () {
+                context.read<ReqResProvider>().saveToLocale(context.read<ResourceContext>());
+                Navigator.of(context).push(MaterialPageRoute(builder: (_) {
+                  return const ImageLearn202();
+                }));
+              },
+              icon: const Icon(Icons.ac_unit)),
+          IconButton(
+            onPressed: () {
+              context.read<ReqResProvider>().saveToLocale(context.read<ResourceContext>());
+              Navigator.of(context).push(MaterialPageRoute(builder: (_) {
+                return const ImageLearn202();
+              }));
+            },
+            icon: Badge.count(
+              count: 986,
+              child: const Icon(Icons.notifications),
+            ),
+          ),
+          IconButton(
+            onPressed: () {
+              context.read<ReqResProvider>().saveToLocale(context.read<ResourceContext>());
+              Navigator.of(context).push(MaterialPageRoute(builder: (_) {
+                return const ImageLearn202();
+              }));
+            },
+            icon: const Badge(
+                label: Text('Offline'),
+                backgroundColor: Colors.orangeAccent,
+                textColor: Colors.black87,
+                child: Icon(Icons.wifi)),
+          )
+        ],
+      ),
+    );
   }
 }
 
@@ -99,6 +132,3 @@ class _TempPlaceHolder extends StatelessWidget {
     });
   }
 }
-
-
-//TODO: Vid16 T56:56

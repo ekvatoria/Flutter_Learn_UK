@@ -41,6 +41,7 @@ import 'package:flutter_full_learn/202/tab_learn.dart';
 import 'package:flutter_full_learn/202/theme/light_theme.dart';
 import 'package:flutter_full_learn/202/theme_learn_view.dart';
 import 'package:flutter_full_learn/303/call_back_learn.dart';
+import 'package:flutter_full_learn/303/lottie_learn.dart';
 import 'package:flutter_full_learn/303/part/part_of_learn.dart';
 import 'package:flutter_full_learn/303/reqres_resource/view/reqres_view.dart';
 import 'package:flutter_full_learn/303/tabbar_advance.dart';
@@ -51,6 +52,7 @@ import 'package:flutter_full_learn/demos/note_demos_view.dart';
 import 'package:flutter_full_learn/demos/stack_demo_view.dart';
 import 'package:flutter_full_learn/product/global/rescource_context.dart';
 import 'package:flutter_full_learn/product/global/theme_notifier.dart';
+import 'package:flutter_full_learn/product/service/project_network_manager.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -70,7 +72,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: ProjectItems.projectName,
       debugShowCheckedModeBanner: false,
       theme: context.watch<ThemeNotifier>().currentTheme,
 
@@ -113,7 +115,7 @@ class MyApp extends StatelessWidget {
       //   //     error: Colors.red,
       //   //     brightness: Brightness.dark)
       // ),
-      home: const ReqResView(),
+      home: const LottieLearn(),
     );
   }
 }

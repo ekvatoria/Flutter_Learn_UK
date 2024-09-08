@@ -50,5 +50,9 @@
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>fotoğraf yüklemek için galerinize ulaşmamız gerekiyor</string>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>medyalara erişmeye ihtiyacımız var</string>
 </dict>
 </plist>

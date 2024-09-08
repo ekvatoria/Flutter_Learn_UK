@@ -50,5 +50,9 @@
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>we need</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>we need your library to upload photos</string>
 </dict>
 </plist>

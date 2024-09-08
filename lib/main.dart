@@ -13,7 +13,7 @@ import 'package:flutter_full_learn/101/indicator_learn.dart';
 import 'package:flutter_full_learn/101/list_tile_learn.dart';
 import 'package:flutter_full_learn/101/list_view_builder.dart';
 import 'package:flutter_full_learn/101/list_view_learn.dart';
-import 'package:flutter_full_learn/101/navigation_learn.dart';
+//import 'package:flutter_full_learn/101/navigation_learn.dart';
 import 'package:flutter_full_learn/101/padding_learn.dart';
 import 'package:flutter_full_learn/101/page_view_learn.dart';
 import 'package:flutter_full_learn/101/scaffold_learn.dart';
@@ -41,7 +41,11 @@ import 'package:flutter_full_learn/202/tab_learn.dart';
 import 'package:flutter_full_learn/202/theme/light_theme.dart';
 import 'package:flutter_full_learn/202/theme_learn_view.dart';
 import 'package:flutter_full_learn/303/call_back_learn.dart';
+import 'package:flutter_full_learn/303/feed_view.dart';
 import 'package:flutter_full_learn/303/lottie_learn.dart';
+import 'package:flutter_full_learn/303/mobx_image_picker/view/mobx_image_upload.dart';
+import 'package:flutter_full_learn/303/navigator/navigate_home_detail_view.dart';
+import 'package:flutter_full_learn/303/navigator/navigate_home_view.dart';
 import 'package:flutter_full_learn/303/part/part_of_learn.dart';
 import 'package:flutter_full_learn/303/reqres_resource/view/reqres_view.dart';
 import 'package:flutter_full_learn/303/tabbar_advance.dart';
@@ -52,6 +56,9 @@ import 'package:flutter_full_learn/demos/note_demos_view.dart';
 import 'package:flutter_full_learn/demos/stack_demo_view.dart';
 import 'package:flutter_full_learn/product/global/rescource_context.dart';
 import 'package:flutter_full_learn/product/global/theme_notifier.dart';
+import 'package:flutter_full_learn/product/navigator/navigator_custom.dart';
+import 'package:flutter_full_learn/product/navigator/navigator_manager.dart';
+import 'package:flutter_full_learn/product/navigator/navigator_routes.dart';
 import 'package:flutter_full_learn/product/service/project_network_manager.dart';
 import 'package:provider/provider.dart';
 
@@ -66,7 +73,7 @@ void main() {
   ));
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatelessWidget with NavigatorCustom {
   const MyApp({super.key});
 
   @override
@@ -115,7 +122,18 @@ class MyApp extends StatelessWidget {
       //   //     error: Colors.red,
       //   //     brightness: Brightness.dark)
       // ),
-      home: const LottieLearn(),
+
+      onUnknownRoute: (settings) {
+        return MaterialPageRoute(
+          builder: (context) {
+            return const LottieLearn();
+          },
+        );
+      },
+      // routes: NavigatorRoutes().items,
+      onGenerateRoute: onGenerateRoute,
+      navigatorKey: NavigatorManager.instance.navigatorGlobalKey,
+      home: const MobxImageUpload(),
     );
   }
 }

@@ -79,7 +79,9 @@ class _SaveAndNavigate extends StatelessWidget {
         children: [
           IconButton(
               onPressed: () {
-                context.read<ReqResProvider>().saveToLocale(context.read<ResourceContext>());
+                context
+                    .read<ReqResProvider>()
+                    .saveToLocale(context.read<ResourceContext>(), context.read<ReqResProvider>().resources);
                 Navigator.of(context).push(MaterialPageRoute(builder: (_) {
                   return const ImageLearn202();
                 }));
@@ -87,7 +89,9 @@ class _SaveAndNavigate extends StatelessWidget {
               icon: const Icon(Icons.ac_unit)),
           IconButton(
             onPressed: () {
-              context.read<ReqResProvider>().saveToLocale(context.read<ResourceContext>());
+              context
+                  .read<ReqResProvider>()
+                  .saveToLocale(context.read<ResourceContext>(), context.read<ReqResProvider>().resources);
               Navigator.of(context).push(MaterialPageRoute(builder: (_) {
                 return const ImageLearn202();
               }));
@@ -99,7 +103,9 @@ class _SaveAndNavigate extends StatelessWidget {
           ),
           IconButton(
             onPressed: () {
-              context.read<ReqResProvider>().saveToLocale(context.read<ResourceContext>());
+              context
+                  .read<ReqResProvider>()
+                  .saveToLocale(context.read<ResourceContext>(), context.read<ReqResProvider>().resources);
               Navigator.of(context).push(MaterialPageRoute(builder: (_) {
                 return const ImageLearn202();
               }));

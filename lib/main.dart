@@ -49,6 +49,7 @@ import 'package:flutter_full_learn/303/navigator/navigate_home_view.dart';
 import 'package:flutter_full_learn/303/part/part_of_learn.dart';
 import 'package:flutter_full_learn/303/reqres_resource/view/reqres_view.dart';
 import 'package:flutter_full_learn/303/tabbar_advance.dart';
+import 'package:flutter_full_learn/303/testable/image_generic_picker.dart';
 import 'package:flutter_full_learn/demos/color_demos_view.dart';
 import 'package:flutter_full_learn/demos/color_life_cycle_view.dart';
 import 'package:flutter_full_learn/demos/my_collections_demo.dart';
@@ -133,7 +134,7 @@ class MyApp extends StatelessWidget with NavigatorCustom {
       // routes: NavigatorRoutes().items,
       onGenerateRoute: onGenerateRoute,
       navigatorKey: NavigatorManager.instance.navigatorGlobalKey,
-      home: const MobxImageUpload(),
+      home: const ImagePickerGenericView(),
     );
   }
 }

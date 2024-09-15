@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_full_learn/101/app_bar.dart';
@@ -50,6 +51,7 @@ import 'package:flutter_full_learn/303/part/part_of_learn.dart';
 import 'package:flutter_full_learn/303/reqres_resource/view/reqres_view.dart';
 import 'package:flutter_full_learn/303/tabbar_advance.dart';
 import 'package:flutter_full_learn/303/testable/image_generic_picker.dart';
+import 'package:flutter_full_learn/404/bloc/feature/login/view/login_view.dart';
 import 'package:flutter_full_learn/demos/color_demos_view.dart';
 import 'package:flutter_full_learn/demos/color_life_cycle_view.dart';
 import 'package:flutter_full_learn/demos/my_collections_demo.dart';
@@ -57,21 +59,27 @@ import 'package:flutter_full_learn/demos/note_demos_view.dart';
 import 'package:flutter_full_learn/demos/stack_demo_view.dart';
 import 'package:flutter_full_learn/product/global/rescource_context.dart';
 import 'package:flutter_full_learn/product/global/theme_notifier.dart';
+import 'package:flutter_full_learn/product/init/localization_init.dart';
+import 'package:flutter_full_learn/product/init/product_init.dart';
 import 'package:flutter_full_learn/product/navigator/navigator_custom.dart';
 import 'package:flutter_full_learn/product/navigator/navigator_manager.dart';
 import 'package:flutter_full_learn/product/navigator/navigator_routes.dart';
 import 'package:flutter_full_learn/product/service/project_network_manager.dart';
 import 'package:provider/provider.dart';
 
-void main() {
-  // runApp(const MyApp());
-  runApp(MultiProvider(
-    providers: [
-      Provider(create: (_) => ResourceContext()),
-      ChangeNotifierProvider<ThemeNotifier>(create: (context) => ThemeNotifier())
-    ],
-    builder: (context, child) => const MyApp(),
-  ));
+Future<void> main() async {
+  final productInit = ProductInit();
+  productInit.init();
+
+  runApp(
+    EasyLocalization(
+        supportedLocales: productInit.localizationInit.supportedLocales,
+        path: productInit.localizationInit.localizationPath,
+        child: MultiProvider(
+          providers: productInit.providers,
+          builder: (context, child) => const MyApp(),
+        )),
+  );
 }
 
 class MyApp extends StatelessWidget with NavigatorCustom {
@@ -83,6 +91,18 @@ class MyApp extends StatelessWidget with NavigatorCustom {
       title: ProjectItems.projectName,
       debugShowCheckedModeBanner: false,
       theme: context.watch<ThemeNotifier>().currentTheme,
+      localizationsDelegates: context.localizationDelegates,
+      supportedLocales: context.supportedLocales,
+      locale: context.locale,
+
+      // Kullanıcının cihaz font ve yazı büyüklüğünü değiştirdiği noktada, tasarıma özgü force etmek için yazılır.
+      builder: (context, child) {
+        return MediaQuery(
+            data: MediaQuery.of(context).copyWith(
+              textScaler: const TextScaler.linear(1),
+            ),
+            child: child ?? const SizedBox());
+      },
 
       // ThemeData.dark().copyWith(
       //   tabBarTheme: const TabBarTheme(
@@ -131,10 +151,13 @@ class MyApp extends StatelessWidget with NavigatorCustom {
           },
         );
       },
+      // builder: (context, widget) {
+      //   return const Text('data');
+      // },
       // routes: NavigatorRoutes().items,
       onGenerateRoute: onGenerateRoute,
       navigatorKey: NavigatorManager.instance.navigatorGlobalKey,
-      home: const ImagePickerGenericView(),
+      home: const LoginView(),
     );
   }
 }

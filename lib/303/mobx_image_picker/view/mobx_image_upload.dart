@@ -76,6 +76,3 @@ class _MobxImageUploadState extends State<MobxImageUpload> {
     );
   }
 }
-
-
-//TODO: V19TSTART
